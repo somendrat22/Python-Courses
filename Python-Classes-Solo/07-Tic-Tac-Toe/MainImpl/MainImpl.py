@@ -6,6 +6,7 @@ class MainImpl:
         self.user2 = user2
     
     def placeCharacters(self, row, col, gameCharacter):
+        self.board.board[row][col] = gameCharacter
         val = 0
         if gameCharacter == 'X':
             val = -1
@@ -25,4 +26,4 @@ class MainImpl:
         if(self.board.rows[row] == 3 or self.board.cols[col] == 3 or self.board.antiDig == 3 or self.board.dig == 3):
             return 1 # Winning condition 
 
-        return -1 # No Win Lets continuue 
+        return -1 # Nobody Win Lets continuue 
